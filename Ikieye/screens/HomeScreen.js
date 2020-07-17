@@ -8,7 +8,7 @@ export default class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text> In HomeScreen</Text>
+        <Text>In HomeScreen</Text>
       </View>
     );
   }

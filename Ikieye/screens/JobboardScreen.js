@@ -1,12 +1,14 @@
-import React, {Component} from 'react';
-import {StyleSheet, View, Text, Button, Navigator} from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, View, Text, Button, Navigator } from 'react-native';
 
-export default function JobboardScreen() {
-  return (
-    <View style={styles.container}>
-      <Text> Job Board</Text>
-    </View>
-  );
+export default class JobboardScreen extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>In Job Board Screen</Text>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({

@@ -1,12 +1,14 @@
-import React, {Component} from 'react';
-import {StyleSheet, View, Text, Button, Navigator} from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, View, Text, Button, Navigator } from 'react-native';
 
-export default function LikesScreen() {
-  return (
-    <View style={styles.container}>
-      <Text> Likes</Text>
-    </View>
-  );
+export default class LikesScreen extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>In Likes Screen</Text>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
