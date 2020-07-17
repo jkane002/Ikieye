@@ -3,26 +3,23 @@ import { StyleSheet, View, Text, Button } from 'react-native';
 
 import { styles } from './styles/styles';
 
-// 1.
-import Feed from './screens/Feed';
-import Detail from './screens/Detail';
+// Screens
 import HomeScreen from "./screens/HomeScreen";
 import GeneratorScreen from "./screens/GeneratorScreen";
 import LikesScreen from "./screens/LikesScreen";
 import JobboardScreen from "./screens/JobboardScreen";
 
-import { NavigationContainer } from "@react-navigation/native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import { createStackNavigator } from "@react-navigation/stack";
+// Importing navigation
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
+// import { createDrawerNavigator } from "@react-navigation/drawer";
+// import { createStackNavigator } from "@react-navigation/stack";
 
-const Drawer = createDrawerNavigator();
-const Stack = createStackNavigator();
 const MaterialBottomTabs = createMaterialBottomTabNavigator();
+// const Drawer = createDrawerNavigator();
+// const Stack = createStackNavigator();
 
 export default class App extends Component {
-
-
   render() {
     // createHomeDrawer = () => {
     //   return <Drawer.Navigator>
