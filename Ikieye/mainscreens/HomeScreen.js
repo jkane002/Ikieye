@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { Text, SafeAreaView, View } from 'react-native';
 import { styles } from '../styles/styles';
+import { Card } from "../components/Card";
 
 
 // import {NavigationContainer} from '@react-navigation/native';
@@ -9,11 +10,20 @@ import { styles } from '../styles/styles';
 export default class HomeScreen extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>In HomeScreen</Text>
-      </View>
+      <SafeAreaView style={styles.cardcontainer}>
+        <Card style={styles.cardouter} >
+          <Text style={styles.title_cards}>What you love</Text>
+        </Card>
+        <Card style={styles.cardouter}>
+          <Text style={styles.title_cards}>What you are good at</Text>
+        </Card>
+        <Card style={styles.cardouter}>
+          <Text style={styles.title_cards}>What the world needs</Text>
+        </Card>
+        <Card style={styles.cardouter}>
+          <Text style={styles.title_cards}>What you can be paid for</Text>
+        </Card>
+      </SafeAreaView >
     );
   }
 }
-
-// home, random gen, likes, jobs,

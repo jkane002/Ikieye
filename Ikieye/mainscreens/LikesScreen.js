@@ -1,23 +1,16 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Button, Navigator } from 'react-native';
 
+import { styles } from '../styles/styles';
+
 export default class LikesScreen extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.screencontainer}>
         <Text>In Likes Screen</Text>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 // home, random gen, likes, jobs,
