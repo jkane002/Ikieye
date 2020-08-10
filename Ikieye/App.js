@@ -10,6 +10,9 @@ import GeneratorScreen from "./mainscreens/GeneratorScreen";
 import LikesScreen from "./mainscreens/LikesScreen";
 import JobboardScreen from "./mainscreens/JobboardScreen";
 
+// Routes
+// import HomeStack from "./routes/HomeStack";
+
 // Importing navigation
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";

@@ -11,4 +11,3 @@ export default class GeneratorScreen extends Component {
     );
   }
 }
-// home, random gen, likes, jobs,

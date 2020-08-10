@@ -12,13 +12,6 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         alignContent: 'center'
     },
-    title_cards: {
-        fontSize: 30,
-        margin: 5,
-        alignContent: "center",
-        justifyContent: "center",
-        textAlign: "center"
-    },
     title: {
         fontSize: 36,
         marginBottom: 16
@@ -32,6 +25,28 @@ export const styles = StyleSheet.create({
     },
     cardcontainer: {
         flexWrap: 'wrap',
+    },
+    title_cards: {
+        fontSize: 28,
+        margin: 5,
+        alignContent: "center",
+        justifyContent: "center",
+        textAlign: "center"
+    },
+    card: {
+        width: '50%',
+        height: '30%',
+        padding: 10,
+        marginTop: 30,
+        marginBottom: 30
+    },
+    cardinner: {
+        flex: 1,
+        padding: 6,
+        borderRadius: 20,
+        backgroundColor: '#ea907a',
+        alignItems: 'center',
+        justifyContent: 'center'
     }
     // },
     // card: {
