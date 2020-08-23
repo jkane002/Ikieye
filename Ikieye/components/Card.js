@@ -1,35 +1,39 @@
-// Component for Cards
+import 'react-native-gesture-handler';
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { Alert, View, Text, TouchableOpacity } from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
+
+
+import { styles } from '../styles/styles';
+
+onPressLove = ({ navigate }) => {
+    Alert.alert("Love");
+    // this.props.navigation.navigate(WhatYouLove);
+};
+onPressGood = () => {
+    Alert.alert("Good");
+};
+onPressJobs = () => {
+    Alert.alert("Jobs");
+};
+onPressWorld = () => {
+    Alert.alert("World");
+};
 
 export function Card(props) {
     return (
-        // <View style={styles.container}>
+        // <NavigationContainer independent={true}>
         <TouchableOpacity
-            style={styles.card}>
+            style={styles.card}
+            onPress={props.pressComp}>
             <View style={styles.cardinner}>
-                {/* <Text>Count: {count}</Text> */}
-                {props.children}
+                <Text style={styles.title_cards}>
+                    {props.name}
+                </Text>
             </View>
         </TouchableOpacity>
-        // </View>
-    )
+        // </NavigationContainer>
+    );
 }
-
-const styles = StyleSheet.create({
-    card: {
-        width: '50%',
-        height: '30%',
-        padding: 10,
-        marginTop: 30,
-        marginBottom: 30
-    },
-    cardinner: {
-        flex: 1,
-        backgroundColor: '#ea907a',
-        alignItems: 'center',
-        justifyContent: 'center'
-    }
-})
 
 
