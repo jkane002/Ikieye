@@ -1,16 +1,17 @@
-import React, { Component } from 'react';
-import { StyleSheet, View, Text, Button, Navigator } from 'react-native';
-
+import React from "react";
+import { Text, Button, } from 'react-native';
 import { styles } from '../styles/styles';
 
-export default class LikesScreen extends Component {
-  render() {
-    return (
-      <View style={styles.screencontainer}>
-        <Text>In Likes Screen</Text>
-      </View>
-    );
-  }
-}
+import { ScreenContainer } from "react-native-screens";
 
-// home, random gen, likes, jobs,
+
+export const LikesScreen = () => {
+  return (
+    <ScreenContainer style={styles.container}>
+      <Text>Likes Screen</Text>
+      <Button title="Drawer" onPress={() => alert("todo")} />
+      <Button title="Sign Out" onPress={() => alert("todo")} />
+    </ScreenContainer>
+  )
+};
+
