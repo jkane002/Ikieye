@@ -1,51 +1,41 @@
-import React, { Component } from 'react';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
-// Screens
-import HomeScreen from "./mainscreens/HomeScreen";
-import GeneratorScreen from "./mainscreens/GeneratorScreen";
-import LikesScreen from "./mainscreens/LikesScreen";
-import JobboardScreen from "./mainscreens/JobboardScreen";
-
-// Subscreens
-import WhatTheWorldNeeds from './subscreens/WhatTheWorldNeeds';
-import WhatYouLove from "./subscreens/WhatYouLove";
-import WhatYouAreGoodAt from "./subscreens/WhatYouAreGoodAt";
-import WhatYouCanBePaidFor from "./subscreens/WhatYouCanBePaidFor";
-
-// Importing navigation
-import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
+import { SignIn, CreateAccount, Profile, Home, Details } from "./screens/Screens";
 
-const BottomTabs = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
+const Tabs = createBottomTabNavigator();
+const HomeStack = createStackNavigator();
+const ProfileStack = createStackNavigator();
 
 
-export default class App extends Component {
+const HomeStackScreen = () => (
+  <HomeStack.Navigator>
+    <HomeStack.Screen name="Home" component={Home} />
+    <HomeStack.Screen
+      name="Details"
+      component={Details}
+      options={({ route }) => ({
+        title: route.params.name
+      })}
+    />
+  </HomeStack.Navigator>
+);
 
-  render() {
-    function HomeScreenContainer({ navigation }) {
-      return (
-        <Stack.Navigator>
-          <Stack.Screen name="Ikieye" component={HomeScreen} />
-          <Stack.Screen name="2" component={WhatYouLove} />
-          <Stack.Screen name="3" component={WhatYouAreGoodAt} />
-          <Stack.Screen name="4" component={WhatYouCanBePaidFor} />
-        </Stack.Navigator>
-      );
-    }
+const ProfileStackScreen = () => (
+  <ProfileStack.Navigator>
+    <ProfileStack.Screen name="Profile" component={Profile} />
+  </ProfileStack.Navigator>
+);
 
-    return (
-      <NavigationContainer>
-        <BottomTabs.Navigator>
-          <BottomTabs.Screen name="Home" component={HomeScreen} />
-          <BottomTabs.Screen name="Generator" component={GeneratorScreen} />
-          <BottomTabs.Screen name="Likes" component={LikesScreen} />
-          <BottomTabs.Screen name="Job board" component={JobboardScreen} />
-        </BottomTabs.Navigator>
-      </NavigationContainer>
-    );
-  }
-}
+
+export default () => (
+  <NavigationContainer>
+    <Tabs.Navigator>
+      <Tabs.Screen name="Home" component={HomeStackScreen} />
+      <Tabs.Screen name="Profile" component={ProfileStackScreen} />
+    </Tabs.Navigator>
+  </NavigationContainer>
+);
