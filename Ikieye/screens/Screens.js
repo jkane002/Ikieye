@@ -3,6 +3,7 @@ import { TouchableOpacity, Text, Button, Alert, StyleSheet } from "react-native"
 import { ScreenContainer } from "react-native-screens";
 
 import { Card } from "../components/Card";
+import DetailScreen from "./Details";
 
 
 export const Home = ({ navigation }) => (
@@ -31,10 +32,7 @@ export const Home = ({ navigation }) => (
 );
 
 export const Details = ({ route }) => (
-    <ScreenContainer style={styles.container}>
-        <Text>Details Screen</Text>
-        {route.params.name && <Text>{route.params.name}</Text>}
-    </ScreenContainer>
+    <DetailScreen name={route.params.name} />
 );
 
 
