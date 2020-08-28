@@ -1,12 +1,17 @@
+import 'react-native-gesture-handler';
 import React from "react";
 import { Text, StyleSheet } from "react-native";
 import { ScreenContainer } from "react-native-screens";
+import { ScrollView } from "react-native-gesture-handler";
 
-export default function Details({ name }) {
+export default function ListJobs({ name }) {
     return (
         <ScreenContainer style={styles.container}>
-            <Text>Details Screen</Text>
-            {name && <Text>{name}</Text>}
+            <ScrollView>
+                <Text>List Jobs Screen</Text>
+                {name && <Text>{name}</Text>}
+                <Text>HEllo</Text>
+            </ScrollView>
         </ScreenContainer>
     )
 }
