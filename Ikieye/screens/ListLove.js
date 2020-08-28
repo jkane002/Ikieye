@@ -1,24 +1,30 @@
 import 'react-native-gesture-handler';
-import React from "react";
-import { Text, StyleSheet } from "react-native";
+import React, { useState } from "react";
+import { Text, StyleSheet, View } from "react-native";
 import { ScreenContainer } from "react-native-screens";
-import { ScrollView } from "react-native-gesture-handler";
+import { ScrollView, FlatList } from "react-native-gesture-handler";
 
 export default function ListLove({ name }) {
+    const [todos, setTodos] = useState([
+        { text: 'Soccer', key: '1' },
+        { text: 'Helping people', key: '2' },
+        { text: 'Technology', key: '3' },
+    ]);
+
     return (
         <ScreenContainer style={styles.container}>
-            <ScrollView>
-                <Text>List Love Screen</Text>
-                {name && <Text>{name}</Text>}
-                <Text>HEllo</Text>
-            </ScrollView>
+            <FlatList
+                data={todos}
+                renderItem={({ item }) => (<Text>{item.text}</Text>
+                )} />
         </ScreenContainer>
     )
 }
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: "center",
-        alignItems: "center"
+        display: "flex"
+        // justifyContent: "center",
+        // alignItems: "center"
     }
 });
