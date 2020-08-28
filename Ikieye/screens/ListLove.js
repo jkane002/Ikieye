@@ -1,8 +1,11 @@
 import 'react-native-gesture-handler';
 import React, { useState } from "react";
-import { Text, StyleSheet, View } from "react-native";
+import { Text, StyleSheet, View, Dimensions } from "react-native";
 import { ScreenContainer } from "react-native-screens";
 import { ScrollView, FlatList } from "react-native-gesture-handler";
+
+// Store list items in a database
+// Give tips on what they can enter
 
 export default function ListLove({ name }) {
     const [todos, setTodos] = useState([
@@ -15,7 +18,10 @@ export default function ListLove({ name }) {
         <ScreenContainer style={styles.container}>
             <FlatList
                 data={todos}
-                renderItem={({ item }) => (<Text>{item.text}</Text>
+                renderItem={({ item }) => (
+                    <Text style={styles.text}>
+                        {item.text}
+                    </Text>
                 )} />
         </ScreenContainer>
     )
@@ -23,8 +29,15 @@ export default function ListLove({ name }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        display: "flex"
-        // justifyContent: "center",
-        // alignItems: "center"
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    text: {
+        fontSize: 18,
+        padding: 15,
+        borderRadius: 20,
+        width: Dimensions.get('window').width,
+        backgroundColor: '#fff'
     }
 });
