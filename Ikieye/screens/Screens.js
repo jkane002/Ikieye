@@ -13,22 +13,22 @@ export const Home = ({ navigation }) => (
         <Card
             name="what you love"
             pressComp={() =>
-                navigation.push("ListLove", { name: "What You Love" })
+                navigation.navigate("ListLove", { name: "What You Love" })
             } />
         <Card
             name="what you are good at"
             pressComp={() =>
-                navigation.push("ListSkills", { name: "What you are good at" })
+                navigation.navigate("ListSkills", { name: "What you are good at" })
             } />
         <Card
             name="what the world needs"
             pressComp={() =>
-                navigation.push("ListWorld", { name: "What the world needs" })
+                navigation.navigate("ListWorld", { name: "What the world needs" })
             } />
         <Card
             name="what you can be paid for"
             pressComp={() =>
-                navigation.push("ListJob", { name: "What you can be paid for" })
+                navigation.navigate("ListJob", { name: "What you can be paid for" })
             } />
     </ScreenContainer>
 );
