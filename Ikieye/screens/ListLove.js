@@ -1,8 +1,30 @@
 import 'react-native-gesture-handler';
 import React, { useState } from "react";
-import { Text, StyleSheet, View, Dimensions } from "react-native";
+import { Text, StyleSheet, Alert, Dimensions } from "react-native";
 import { ScreenContainer } from "react-native-screens";
-import { ScrollView, FlatList } from "react-native-gesture-handler";
+import { FlatList } from "react-native-gesture-handler";
+
+import AddItem from '../components/AddItem';
+
+const addItem = text => {
+    if (!text) {
+        Alert.alert(
+            'No item entered',
+            'Please enter an item when adding to your shopping list',
+            [
+                {
+                    text: 'Understood',
+                    style: 'cancel',
+                },
+            ],
+            { cancelable: true },
+        );
+    } else {
+        setItems(prevItems => {
+            return [{ id: uuid(), text }, ...prevItems];
+        });
+    }
+};
 
 // Store list items in a database
 // Give tips on what they can enter
@@ -16,6 +38,7 @@ export default function ListLove({ name }) {
 
     return (
         <ScreenContainer style={styles.container}>
+            {/* <AddItem addItem={addItem} /> */}
             <FlatList
                 data={todos}
                 renderItem={({ item }) => (
@@ -39,5 +62,10 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         width: Dimensions.get('window').width,
         backgroundColor: '#fff'
+    },
+    input: {
+        height: 60,
+        padding: 8,
+        margin: 5,
     }
 });
