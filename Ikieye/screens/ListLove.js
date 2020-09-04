@@ -10,7 +10,7 @@ const addItem = text => {
     if (!text) {
         Alert.alert(
             'No item entered',
-            'Please enter an item when adding to your shopping list',
+            'Please enter an item when adding to your list',
             [
                 {
                     text: 'Understood',
@@ -38,7 +38,7 @@ export default function ListLove({ name }) {
 
     return (
         <ScreenContainer style={styles.container}>
-            {/* <AddItem addItem={addItem} /> */}
+            <AddItem addItem={addItem} />
             <FlatList
                 data={todos}
                 renderItem={({ item }) => (
