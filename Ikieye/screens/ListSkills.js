@@ -2,26 +2,49 @@ import 'react-native-gesture-handler';
 import React, { useState } from "react";
 import { Text, StyleSheet, Dimensions } from "react-native";
 import { ScreenContainer } from "react-native-screens";
-import { ScrollView, FlatList } from "react-native-gesture-handler";
+import { FlatList } from "react-native-gesture-handler";
+import { generate } from "shortid";
+
+import ListItem from "../components/ListItem";
+import EntryForm from '../components/EntryForm';
 
 // Store list items in a database
 // Give tips on what they can enter
 
-export default function ListSkills({ name }) {
-    const [todos, setTodos] = useState([
-        { text: 'Coding', key: '1' },
-        { text: 'Public speaking', key: '2' },
-        { text: 'Leadership', key: '3' },
-    ]);
+const useItems = () => {
+    const [items, setItems] = useState([]);
+    const addItem = text => {
+        if (!text) {
+            Alert.alert(
+                'No item entered',
+                'Please enter an item when adding to your list',
+                [
+                    {
+                        text: 'Understood',
+                        style: 'cancel',
+                    },
+                ],
+                { cancelable: true },
+            );
+        } else {
+            const newItem = { id: generate(), text };
+            setItems([newItem, ...items]);
+        }
+    };
+    return { items, addItem };
+};
 
+export default function ListSkills({ name }) {
+    const { items, addItem } = useItems();
     return (
         <ScreenContainer style={styles.container}>
+            <EntryForm onNewEntry={addItem} />
             <FlatList
-                data={todos}
+                data={items}
                 renderItem={({ item }) => (
-                    <Text style={styles.text}>
-                        {item.text}
-                    </Text>
+                    <ListItem
+                        item={item}
+                    />
                 )} />
         </ScreenContainer>
     )

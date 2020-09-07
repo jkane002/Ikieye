@@ -8,6 +8,9 @@ import { generate } from "shortid";
 import ListItem from "../components/ListItem";
 import EntryForm from '../components/EntryForm';
 
+// Store list items in a database
+// Give tips on what they can enter
+
 const useItems = () => {
     const [items, setItems] = useState([]);
     const addItem = text => {
@@ -31,8 +34,6 @@ const useItems = () => {
     return { items, addItem };
 };
 
-// Store list items in a database
-// Give tips on what they can enter
 
 export default function ListLove({ name }) {
 
@@ -40,7 +41,6 @@ export default function ListLove({ name }) {
     return (
         <ScreenContainer style={styles.container}>
             <EntryForm onNewEntry={addItem} />
-            {/* <AddItem addItem={addItem} /> */}
             <FlatList
                 data={items}
                 renderItem={({ item }) => (
