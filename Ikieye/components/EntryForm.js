@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import {
     View,
     Text,
@@ -10,16 +10,13 @@ import {
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 Icon.loadFont();
 
-export default function EntryForm({ onNewEntry = f => f }) {
+export default function EntryForm({ onNewEntry = f => f, cardName }) {
     const [text, setText] = useState('');
     const onChange = textValue => setText(textValue);
 
-    // const [inputValue, setValue] = useState("");
-    // const input = useRef();
     return (
         <View>
             <TextInput
-                // ref={input}
                 placeholder="Add Item..."
                 style={styles.input}
                 onChangeText={onChange}

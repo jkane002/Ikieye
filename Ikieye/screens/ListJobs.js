@@ -38,7 +38,7 @@ export default function ListJobs({ name }) {
     const { items, addItem } = useItems();
     return (
         <ScreenContainer style={styles.container}>
-            <EntryForm onNewEntry={addItem} />
+            <EntryForm onNewEntry={addItem} cardName={name} />
             <FlatList
                 data={items}
                 renderItem={({ item }) => (

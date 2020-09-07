@@ -1,5 +1,5 @@
 import 'react-native-gesture-handler';
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { Text, StyleSheet, Alert, Dimensions } from "react-native";
 import { ScreenContainer } from "react-native-screens";
 import { FlatList } from "react-native-gesture-handler";
@@ -33,7 +33,6 @@ const useItems = () => {
     };
     return { items, addItem };
 };
-
 
 export default function ListLove({ name }) {
 
