@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
     View,
     Text,
@@ -10,23 +10,28 @@ import {
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 Icon.loadFont();
 
-const AddItem = ({ addItem }) => {
+export default function EntryForm({ onNewEntry = f => f }) {
     const [text, setText] = useState('');
     const onChange = textValue => setText(textValue);
 
+    // const [inputValue, setValue] = useState("");
+    // const input = useRef();
     return (
         <View>
             <TextInput
+                // ref={input}
                 placeholder="Add Item..."
                 style={styles.input}
                 onChangeText={onChange}
-                value={text}
+                // value={text}
+                autoCapitalize="none"
             />
             <TouchableOpacity
                 style={styles.btn}
                 onPress={() => {
-                    addItem(text);
-                    setText('');
+                    // input.current.blur();
+                    onNewEntry(text);
+                    // setText("");
                 }}>
                 <Text style={styles.btnText}>
                     <Icon name="plus" size={20} /> Add Item
@@ -55,4 +60,3 @@ const styles = StyleSheet.create({
     },
 });
 
-export default AddItem;

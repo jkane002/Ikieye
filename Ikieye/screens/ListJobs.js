@@ -4,6 +4,7 @@ import { Text, StyleSheet, Dimensions } from "react-native";
 import { ScreenContainer } from "react-native-screens";
 import { ScrollView, FlatList } from "react-native-gesture-handler";
 
+import ListItem from "../components/ListItem";
 // Store list items in a database
 // Give tips on what they can enter
 
@@ -18,11 +19,13 @@ export default function ListJobs({ name }) {
         <ScreenContainer style={styles.container}>
             <FlatList
                 data={todos}
-                renderItem={({ item }) => (
-                    <Text style={styles.text}>
-                        {item.text}
-                    </Text>
-                )} />
+                renderItem={({ item }) => {
+                    return (
+                        <ListItem
+                            key={item.id}
+                        />
+                    );
+                }} />
         </ScreenContainer>
     )
 }
