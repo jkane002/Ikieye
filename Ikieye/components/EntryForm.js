@@ -10,6 +10,8 @@ import {
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 Icon.loadFont();
 
+// Finding duplicates part of backend?
+
 export default function EntryForm({ onNewEntry = f => f, cardName }) {
     const [text, setText] = useState('');
     const onChange = textValue => setText(textValue);

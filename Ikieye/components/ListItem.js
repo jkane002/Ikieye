@@ -10,17 +10,24 @@ Icon.loadFont();
 
 
 const ListItem = ({
-    item
+    item,
+    deleteItem
 }) => {
     return (
         <TouchableHighlight
             style={styles.button}
         // onPress={() => onPress(backgroundColor)}
         >
-            <View >
+            <View>
                 <Text>
                     {item.text}
                 </Text>
+                {/* <Icon
+                    name="remove"
+                    size={20}
+                    color="firebrick"
+                    onPress={() => deleteItem(item.id)}
+                /> */}
             </View>
         </TouchableHighlight>
     );
@@ -41,7 +48,7 @@ const styles = StyleSheet.create({
     },
     row: {
         flexDirection: "row",
-        alignItems: "center"
+        justifyContent: 'space-evenly',
     }
 });
 
