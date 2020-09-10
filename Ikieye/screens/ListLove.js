@@ -1,9 +1,8 @@
 import 'react-native-gesture-handler';
-import React, { useState } from "react";
-import { Text, StyleSheet, Alert, Dimensions } from "react-native";
+import React from "react";
+import { StyleSheet } from "react-native";
 import { ScreenContainer } from "react-native-screens";
 import { FlatList } from "react-native-gesture-handler";
-import { generate } from "shortid";
 
 import ListItem from "../components/ListItem";
 import EntryForm from '../components/EntryForm';
