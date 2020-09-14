@@ -7,7 +7,7 @@ import { FlatList } from "react-native-gesture-handler";
 import ListItem from "../components/ListItem";
 import EntryForm from '../components/EntryForm';
 
-import { useItems } from "../hooks";
+import { useItems } from "../hooks/hooks_jobs";
 
 // Store list items in a database
 // Give tips on what they can enter
@@ -22,7 +22,6 @@ export default function ListJobs({ name }) {
                 renderItem={({ item }) => (
                     <ListItem
                         item={item}
-                        deleteItem={deleteItem}
                     />
                 )} />
         </ScreenContainer>

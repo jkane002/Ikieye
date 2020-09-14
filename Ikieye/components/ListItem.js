@@ -22,7 +22,7 @@ const ListItem = ({
                 <Text>
                     {item.text}
                 </Text>
-                {/* <Icon
+                { /*  <Icon
                     name="remove"
                     size={20}
                     color="firebrick"
