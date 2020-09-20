@@ -8,7 +8,7 @@ import {
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 Icon.loadFont();
 
-
+// Generates a single list with text
 const ListItem = ({
     item,
     deleteItem
@@ -22,12 +22,12 @@ const ListItem = ({
                 <Text>
                     {item.text}
                 </Text>
-                { /*  <Icon
+                <Icon
                     name="remove"
                     size={20}
                     color="firebrick"
                     onPress={() => deleteItem(item.id)}
-                /> */}
+                />
             </View>
         </TouchableHighlight>
     );

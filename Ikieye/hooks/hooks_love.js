@@ -7,6 +7,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 export const useItems = () => {
     const [items, setItems] = useState([]);
 
+    // Uses AsyncStorage to store data
     const loadItems = async () => {
         const itemData = await AsyncStorage.getItem(
             "@ListofLoveItems:Items"
@@ -17,18 +18,19 @@ export const useItems = () => {
         }
     };
 
-    const deleteItem = (id) => {
-        console.log("Hi");
-        // setItems(prevItems => {
-        //     return prevItems.filter(item => item.id !== id);
-        // });
+    // Filters data by id, deletes it
+    deleteItem = id => {
+        const filtered_items = items.filter(item => item.id !== id);
+        setItems(filtered_items);
     };
 
+    // If a list item exists, load them
     useEffect(() => {
         if (items.length) return;
         loadItems();
     }, []);
 
+    // Sets items for async
     useEffect(() => {
         AsyncStorage.setItem(
             "@ListofLoveItems:Items",
@@ -36,8 +38,8 @@ export const useItems = () => {
         );
     }, [items]);
 
-
-
+    // TODO: if no text, disable keyboard & replace alerts
+    // Generates a new id with text, sets items
     const addItem = text => {
         if (!text) {
             Alert.alert(

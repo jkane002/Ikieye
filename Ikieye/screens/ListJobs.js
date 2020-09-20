@@ -22,6 +22,7 @@ export default function ListJobs({ name }) {
                 renderItem={({ item }) => (
                     <ListItem
                         item={item}
+                        deleteItem={deleteItem}
                     />
                 )} />
         </ScreenContainer>

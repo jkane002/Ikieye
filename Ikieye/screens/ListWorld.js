@@ -22,6 +22,7 @@ export default function ListWorld({ name }) {
                 renderItem={({ item }) => (
                     <ListItem
                         item={item}
+                        deleteItem={deleteItem}
                     />
                 )} />
         </ScreenContainer>

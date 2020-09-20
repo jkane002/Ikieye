@@ -17,11 +17,10 @@ export const useItems = () => {
         }
     };
 
-    const deleteItem = (id) => {
-        console.log("Hi");
-        // setItems(prevItems => {
-        //     return prevItems.filter(item => item.id !== id);
-        // });
+    // Filters data by id, deletes it
+    deleteItem = id => {
+        const filtered_items = items.filter(item => item.id !== id);
+        setItems(filtered_items);
     };
 
     useEffect(() => {

@@ -22,6 +22,7 @@ export default function ListSkills({ name }) {
                 renderItem={({ item }) => (
                     <ListItem
                         item={item}
+                        deleteItem={deleteItem}
                     />
                 )} />
         </ScreenContainer>
