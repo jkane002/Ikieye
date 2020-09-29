@@ -1,4 +1,5 @@
 import React from "react";
+import { Dimensions } from "react-native";
 import {
     Text,
     View,
@@ -18,16 +19,16 @@ const ListItem = ({
             style={styles.button}
         // onPress={() => onPress(backgroundColor)}
         >
-            <View>
-                <Text>
+            <View style={styles.row}>
+                <Text style={styles.buttonText}>
                     {item.text}
                 </Text>
-                <Icon
+                {/* <Icon
                     name="remove"
                     size={20}
                     color="firebrick"
                     onPress={() => deleteItem(item.id)}
-                />
+                /> */}
             </View>
         </TouchableHighlight>
     );
@@ -35,20 +36,21 @@ const ListItem = ({
 
 const styles = StyleSheet.create({
     button: {
-        margin: 10,
+        marginBottom: 0,
         padding: 10,
-        borderWidth: 2,
-        borderRadius: 10,
+        borderWidth: .5,
+        // borderRadius: 5,
+        width: Dimensions.get('window').width,
         alignSelf: "stretch",
         backgroundColor: "rgba(255, 255, 255, 0.8)"
     },
     buttonText: {
-        fontSize: 30,
-        textAlign: "center"
+        fontSize: 24,
+        textAlign: "left"
     },
     row: {
         flexDirection: "row",
-        justifyContent: 'space-evenly',
+        // justifyContent: 'space-evenly',
     }
 });
 
