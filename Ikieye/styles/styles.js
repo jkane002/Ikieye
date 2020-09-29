@@ -25,46 +25,5 @@ export const styles = StyleSheet.create({
     },
     cardcontainer: {
         flexWrap: 'wrap',
-    },
-    title_cards: {
-        fontSize: 28,
-        margin: 5,
-        alignContent: "center",
-        justifyContent: "center",
-        textAlign: "center"
-    },
-    card: {
-        width: '50%',
-        height: '30%',
-        padding: 10,
-        marginTop: 30,
-        marginBottom: 30
-    },
-    cardinner: {
-        flex: 1,
-        padding: 6,
-        borderRadius: 20,
-        backgroundColor: '#ec625f',
-        alignItems: 'center',
-        justifyContent: 'center'
     }
-    // },
-    // card: {
-    //     flex: 1,
-    //     flexWrap: 'wrap',
-    //     flexDirection: 'row',
-    //     borderRadius: 6,
-    //     elevation: 3,
-    //     backgroundColor: '#fff',
-    //     marginHorizontal: 4,
-    //     marginVertical: 6,
-    //     shadowOffset: { width: 1, height: 1 },
-    //     shadowColor: '#333',
-    //     shadowOpacity: 0.3,
-    //     shadowRadius: 2
-    // },
-    // cardContent: {
-    //     marginHorizontal: 18,
-    //     marginVertical: 10
-    // }
 });
