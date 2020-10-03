@@ -8,6 +8,8 @@ import ListWorldScreen from "./ListWorld";
 import ListJobsScreen from "./ListJobs";
 import ListSkillsScreen from "./ListSkills";
 
+import { Ad } from "../components/Ad";
+
 export const Home = ({ navigation }) => (
     <ScreenContainer style={styles.container}>
         <View style={styles.home_bar}>
@@ -35,9 +37,7 @@ export const Home = ({ navigation }) => (
                     navigation.navigate("ListJob", { name: "What you can be paid for" })
                 } />
         </View>
-        <View style={styles.ad_container}>
-            <Text>Placeholder: Advertisements Here</Text>
-        </View>
+        <Ad style={styles.ad_container} />
     </ScreenContainer>
 );
 
@@ -73,6 +73,7 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     ad_container: {
+        backgroundColor: "gray",
         flex: 1,
         flexDirection: "row",
         justifyContent: "center",

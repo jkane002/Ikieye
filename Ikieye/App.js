@@ -15,8 +15,6 @@ const GeneratorStack = createStackNavigator();
 const LikesStack = createStackNavigator();
 const JobBoardStack = createStackNavigator();
 
-
-
 const HomeStackScreen = () => (
   <HomeStack.Navigator>
     <HomeStack.Screen name="IkiEye" component={Home} />
