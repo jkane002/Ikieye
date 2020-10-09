@@ -15,27 +15,23 @@ const ListItem = ({
     deleteItem
 }) => {
     return (
-        <TouchableHighlight
-            style={styles.button}
-        // onPress={() => onPress(backgroundColor)}
-        >
-            <View style={styles.row}>
-                <Text style={styles.buttonText}>
-                    {item.text}
-                </Text>
-                {/* <Icon
+        <View style={styles.button}>
+            <Text style={styles.buttonText}>
+                {item.text}
+            </Text>
+            {/* <Icon
                     name="remove"
                     size={20}
                     color="firebrick"
                     onPress={() => deleteItem(item.id)}
                 /> */}
-            </View>
-        </TouchableHighlight>
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
     button: {
+        flexDirection: "row",
         marginBottom: 0,
         padding: 10,
         borderWidth: .5,
@@ -47,10 +43,6 @@ const styles = StyleSheet.create({
     buttonText: {
         fontSize: 24,
         textAlign: "left"
-    },
-    row: {
-        flexDirection: "row",
-        // justifyContent: 'space-evenly',
     }
 });
 
