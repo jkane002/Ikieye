@@ -1,8 +1,8 @@
 import 'react-native-gesture-handler';
 import React from "react";
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import { ScreenContainer } from "react-native-screens";
-import { FlatList } from "react-native-gesture-handler";
+import { SwipeListView } from "react-native-swipe-list-view";
 
 import ListItem from "../components/ListItem";
 import EntryForm from '../components/EntryForm';
@@ -14,17 +14,35 @@ import { useItems } from "../hooks/hooks_jobs";
 
 export default function ListJobs({ name }) {
     const { items, addItem } = useItems();
+    // Renders the back row to delete the list item
+    const renderHiddenItem = ({ item }) => {
+        return (
+            <View style={styles.rowBack}>
+                <Text>Left</Text>
+                <TouchableOpacity style={[styles.backRightBtn, styles.backRightBtnLeft]}>
+                    <Text>Close</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={[styles.backRightBtn, styles.backRightBtnRight]}
+                    onPress={() => deleteItem(item.id)}>
+                    <Text>Delete</Text>
+                </TouchableOpacity>
+            </View>
+        );
+    };
     return (
         <ScreenContainer style={styles.container}>
-            <EntryForm onNewEntry={addItem} cardName={name} />
-            <FlatList
+            <EntryForm onNewEntry={addItem} />
+            <SwipeListView
                 data={items}
                 renderItem={({ item }) => (
                     <ListItem
                         item={item}
-                        deleteItem={deleteItem}
                     />
-                )} />
+                )}
+                renderHiddenItem={renderHiddenItem}
+                leftOpenValue={75}
+                rightOpenValue={-150} />
         </ScreenContainer>
     )
 }
@@ -35,11 +53,30 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center"
     },
-    text: {
-        fontSize: 18,
-        padding: 15,
-        borderRadius: 20,
-        width: Dimensions.get('window').width,
-        backgroundColor: '#fff'
+    backRightBtn: {
+        alignItems: 'flex-end',
+        bottom: 0,
+        justifyContent: 'center',
+        position: 'absolute',
+        top: 0,
+        width: 75,
+        paddingRight: 17,
+    },
+    backRightBtnLeft: {
+        backgroundColor: '#1f65ff',
+        right: 75,
+    },
+    backRightBtnRight: {
+        backgroundColor: 'red',
+        right: 0
+    },
+    rowBack: {
+        borderWidth: .5,
+        alignItems: 'center',
+        backgroundColor: '#DDD',
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingLeft: 15
     }
 });

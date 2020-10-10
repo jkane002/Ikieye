@@ -10,21 +10,12 @@ import Icon from 'react-native-vector-icons/dist/FontAwesome';
 Icon.loadFont();
 
 // Generates a single list with text
-const ListItem = ({
-    item,
-    deleteItem
-}) => {
+const ListItem = ({ item }) => {
     return (
         <View style={styles.button}>
             <Text style={styles.buttonText}>
                 {item.text}
             </Text>
-            {/* <Icon
-                    name="remove"
-                    size={20}
-                    color="firebrick"
-                    onPress={() => deleteItem(item.id)}
-                /> */}
         </View>
     );
 }
@@ -35,10 +26,9 @@ const styles = StyleSheet.create({
         marginBottom: 0,
         padding: 10,
         borderWidth: .5,
-        // borderRadius: 5,
         width: Dimensions.get('window').width,
         alignSelf: "stretch",
-        backgroundColor: "rgba(255, 255, 255, 0.8)"
+        backgroundColor: "#fff"
     },
     buttonText: {
         fontSize: 24,
