@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     },
     ad_container: {
         backgroundColor: "gray",
-        flex: 1,
+        flex: .75,
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
