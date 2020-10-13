@@ -24,7 +24,9 @@ const iconSize = 26; // Bottom tab icon size
 
 const HomeStackScreen = () => (
   <HomeStack.Navigator>
-    <HomeStack.Screen name="IkiEye" component={Home} />
+    <HomeStack.Screen
+      name="IkiEye"
+      component={Home} />
     <HomeStack.Screen
       name="ListLove"
       component={ListLove}
@@ -90,8 +92,6 @@ export default () => (
             iconName = focused
               ? 'home'
               : 'home-outline';
-
-            // You can return any component that you like here!
             return <Icon name={iconName} size={iconSize} color={color} />;
           },
         })} />
@@ -118,8 +118,6 @@ export default () => (
             iconName = focused
               ? 'heart'
               : 'heart-outline';
-
-            // You can return any component that you like here!
             return <Icon name={iconName} size={iconSize} color={color} />;
           },
         })} />
@@ -132,8 +130,6 @@ export default () => (
             iconName = focused
               ? 'briefcase'
               : 'briefcase-outline';
-
-            // You can return any component that you like here!
             return <Icon name={iconName} size={iconSize} color={color} />;
           },
         })} />

@@ -1,19 +1,16 @@
 import React from "react";
-import { Dimensions } from "react-native";
 import {
     Text,
     View,
     StyleSheet,
-    TouchableHighlight
+    Dimensions
 } from "react-native";
-import Icon from 'react-native-vector-icons/dist/FontAwesome';
-Icon.loadFont();
 
-// Generates a single list with text
+// Generates a single list item with text
 const ListItem = ({ item }) => {
     return (
-        <View style={styles.button}>
-            <Text style={styles.buttonText}>
+        <View style={styles.entryItem}>
+            <Text style={styles.entryItemText}>
                 {item.text}
             </Text>
         </View>
@@ -21,7 +18,7 @@ const ListItem = ({ item }) => {
 }
 
 const styles = StyleSheet.create({
-    button: {
+    entryItem: {
         flexDirection: "row",
         marginBottom: 0,
         padding: 10,
@@ -30,7 +27,7 @@ const styles = StyleSheet.create({
         alignSelf: "stretch",
         backgroundColor: "#fff"
     },
-    buttonText: {
+    entryItemText: {
         fontSize: 24,
         textAlign: "left"
     }

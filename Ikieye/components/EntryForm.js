@@ -7,12 +7,17 @@ import {
     TouchableOpacity,
     Dimensions
 } from 'react-native';
-import Icon from 'react-native-vector-icons/dist/FontAwesome';
+
+// Icons
+import Icon from 'react-native-vector-icons/Ionicons';
 Icon.loadFont();
 
+// The Entry Form includes the text field and the add button to enter items
+
+// TODO
 // Finding duplicates part of backend?
 
-export default function EntryForm({ onNewEntry = f => f, cardName }) {
+export default function EntryForm({ onNewEntry = f => f }) {
     const [text, setText] = useState('');
     const onChange = textValue => setText(textValue);
 
@@ -22,18 +27,15 @@ export default function EntryForm({ onNewEntry = f => f, cardName }) {
                 placeholder="Add Item..."
                 style={styles.input}
                 onChangeText={onChange}
-                // value={text}
                 autoCapitalize="none"
             />
             <TouchableOpacity
-                style={styles.btn}
+                style={styles.addItem_btn}
                 onPress={() => {
-                    // input.current.blur();
                     onNewEntry(text);
-                    // setText("");
                 }}>
-                <Text style={styles.btnText}>
-                    <Icon name="plus" size={20} /> Add Item
+                <Text style={styles.addItem_btnText}>
+                    <Icon name="add" size={20} /> Add Item
                 </Text>
             </TouchableOpacity>
         </View>
@@ -41,20 +43,22 @@ export default function EntryForm({ onNewEntry = f => f, cardName }) {
 };
 
 const styles = StyleSheet.create({
+    // Input field
     input: {
         height: 60,
         padding: 8,
         margin: 5,
         width: Dimensions.get('window').width
     },
-    btn: {
+    // Add Item Button
+    addItem_btn: {
         backgroundColor: '#c2bad8',
         padding: 9
     },
-    btnText: {
+    // Text styling in Add Item
+    addItem_btnText: {
         color: 'darkslateblue',
         fontSize: 20,
         textAlign: 'center',
     },
 });
-

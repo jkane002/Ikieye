@@ -1,6 +1,8 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
+// Card layout for each IkiEye component
+
 export function Card(props) {
     return (
         <TouchableOpacity

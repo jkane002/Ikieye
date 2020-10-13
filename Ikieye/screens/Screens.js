@@ -10,6 +10,8 @@ import ListSkillsScreen from "./ListSkills";
 
 import { Ad } from "../components/Ad";
 
+// The Home Screen - Navigate to individual cards, provide info on IkiEye, ads 
+
 export const Home = ({ navigation }) => (
     <ScreenContainer style={styles.container}>
         <View style={styles.home_bar}>
@@ -41,6 +43,7 @@ export const Home = ({ navigation }) => (
     </ScreenContainer>
 );
 
+// Card components - for navigation
 export const ListLove = ({ route }) => (
     <ListLoveScreen name={route.params.name} />
 );
@@ -56,9 +59,11 @@ export const ListSkills = ({ route }) => (
 
 
 const styles = StyleSheet.create({
+    // overall screen container
     container: {
         flex: 1
     },
+    // top home bar
     home_bar: {
         flex: 2,
         flexDirection: "row",
@@ -66,12 +71,14 @@ const styles = StyleSheet.create({
         alignItems: "center"
 
     },
+    // container for all cards
     all_cards_container: {
         flex: 6,
         flexWrap: "wrap",
         justifyContent: "center",
         alignItems: "center"
     },
+    // container for ads
     ad_container: {
         backgroundColor: "gray",
         flex: .75,
@@ -115,5 +122,3 @@ const styles = StyleSheet.create({
 //     );
 // };
 */
-
-
