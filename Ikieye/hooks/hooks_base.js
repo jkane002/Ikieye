@@ -3,12 +3,12 @@ import { generate } from "shortid";
 import { Alert } from "react-native";
 import AsyncStorage from '@react-native-community/async-storage';
 
-export const useItems = () => {
+export const useItems = ({ db_list }) => {
     const [items, setItems] = useState([]);
 
     const loadItems = async () => {
         const itemData = await AsyncStorage.getItem(
-            "@ListofJobItems:Items"
+            JSON.stringify({ db_list })
         );
         if (itemData) {
             const items = JSON.parse(itemData);
@@ -29,7 +29,7 @@ export const useItems = () => {
 
     useEffect(() => {
         AsyncStorage.setItem(
-            "@ListofJobItems:Items",
+            JSON.stringify({ db_list }),
             JSON.stringify(items)
         );
     }, [items]);

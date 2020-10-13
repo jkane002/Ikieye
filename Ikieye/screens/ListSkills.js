@@ -7,13 +7,15 @@ import { SwipeListView } from "react-native-swipe-list-view";
 import ListItem from "../components/ListItem";
 import EntryForm from '../components/EntryForm';
 
-import { useItems } from "../hooks/hooks_good";
+import { useItems } from "../hooks/hooks_base";
 
 // Store list items in a database
 // Give tips on what they can enter
 
 export default function ListSkills({ name }) {
-    const { items, addItem } = useItems();
+    const db_list = "@ListofSkillItems:Items";
+    const { items, addItem } = useItems({ db_list });
+
     // Renders the back row to delete the list item
     const renderHiddenItem = ({ item }) => {
         return (
