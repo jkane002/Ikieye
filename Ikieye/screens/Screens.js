@@ -3,10 +3,7 @@ import { Text, Button, StyleSheet, View } from "react-native";
 import { ScreenContainer } from "react-native-screens";
 
 import { Card } from "../components/Card";
-import ListLoveScreen from "./ListLove";
-import ListWorldScreen from "./ListWorld";
-import ListJobsScreen from "./ListJobs";
-import ListSkillsScreen from "./ListSkills";
+import ListBase from "./ListBase";
 
 import { Ad } from "../components/Ad";
 
@@ -21,22 +18,22 @@ export const Home = ({ navigation }) => (
             <Card
                 name="what you love"
                 pressComp={() =>
-                    navigation.navigate("ListLove", { name: "What You Love" })
+                    navigation.navigate("ListLove", { name: "what you love" })
                 } />
             <Card
                 name="what you are good at"
                 pressComp={() =>
-                    navigation.navigate("ListSkills", { name: "What you are good at" })
+                    navigation.navigate("ListSkills", { name: "what you are good at" })
                 } />
             <Card
                 name="what the world needs"
                 pressComp={() =>
-                    navigation.navigate("ListWorld", { name: "What the world needs" })
+                    navigation.navigate("ListWorld", { name: "what the world needs" })
                 } />
             <Card
                 name="what you can be paid for"
                 pressComp={() =>
-                    navigation.navigate("ListJob", { name: "What you can be paid for" })
+                    navigation.navigate("ListJob", { name: "what you can be paid for" })
                 } />
         </View>
         <Ad style={styles.ad_container} />
@@ -45,16 +42,16 @@ export const Home = ({ navigation }) => (
 
 // Card components - for navigation
 export const ListLove = ({ route }) => (
-    <ListLoveScreen name={route.params.name} />
+    <ListBase name={route.params.name} />
 );
 export const ListJob = ({ route }) => (
-    <ListJobsScreen name={route.params.name} />
+    <ListBase name={route.params.name} />
 );
 export const ListWorld = ({ route }) => (
-    <ListWorldScreen name={route.params.name} />
+    <ListBase name={route.params.name} />
 );
 export const ListSkills = ({ route }) => (
-    <ListSkillsScreen name={route.params.name} />
+    <ListBase name={route.params.name} />
 );
 
 

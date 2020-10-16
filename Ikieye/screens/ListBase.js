@@ -12,9 +12,20 @@ import { useItems } from "../hooks/hooks_base";
 // Store list items in a database
 // Give tips on what they can enter
 
-export default function ListLove({ name }) {
-    const db_list = "@ListofLoveItems:Items";
-    const { items, addItem } = useItems({ db_list });
+export default function ListBase({ name }) {
+    // lookup table for the different lists for asyncstorage
+    let listName = { name }["name"];
+    const getListType = (listName) => {
+        var lists = {
+            "what you love": "@ListofLoveItems:Items",
+            "what you are good at": "@ListofSkillItems:Items",
+            "what the world needs": "@ListofWorldItems:Items",
+            "what you can be paid for": "@ListofJobItems:Items",
+        };
+        let db_list = lists[listName];
+        return { db_list };
+    }
+    const { items, addItem } = useItems(getListType(listName));
 
     // Renders the back row to delete the list item
     const renderHiddenItem = ({ item }) => {
