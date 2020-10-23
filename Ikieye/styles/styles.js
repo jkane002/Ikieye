@@ -25,5 +25,5 @@ export const styles = StyleSheet.create({
     },
     cardcontainer: {
         flexWrap: 'wrap',
-    }
+    },
 });
