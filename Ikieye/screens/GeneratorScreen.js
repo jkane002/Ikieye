@@ -127,15 +127,6 @@ export const GeneratorScreen = () => {
           }}
         />
       </View>
-      {/* <View style={styles.bottomContainer}>
-        <Transitioning.View
-          ref={transitionRef}
-          transition={transition}
-          style={styles.bottomContainerMeta}
-        >
-          <CardDetails index={index} />
-        </Transitioning.View>
-      </View> */}
       <View style={styles.bottomContainerButtons}>
         <Icon.Button
           name='close'
@@ -144,6 +135,14 @@ export const GeneratorScreen = () => {
           underlayColor="transparent"
           size={iconSize}
           onPress={() => swiperRef.current.swipeLeft()}
+        />
+        <Icon.Button
+          backgroundColor="transparent"
+          underlayColor="transparent"
+          name='star'
+          color="gold"
+          size={iconSize}
+          onPress={() => swiperRef.current.swipeTop()}
         />
         <Icon.Button
           backgroundColor="transparent"
