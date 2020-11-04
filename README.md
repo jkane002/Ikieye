@@ -77,8 +77,8 @@
 
 * Frontend: React Native
 * Backend: Django REST Framework (In Progress)
-<!-- * []()
-* []() -->
+ * [Created a test API here](https://github.com/jkane002/profiles-rest-api)
+<!--* []() -->
 
 
 
