@@ -153,7 +153,7 @@ Project Link: [https://github.com/jkane002/Ikieye](https://github.com/jkane002/I
 [issues-shield]: https://img.shields.io/github/issues/jkane002/repo.svg?style=flat-square
 [issues-url]: https://github.com/jkane002/repo/issues
 [license-shield]: https://img.shields.io/github/license/jkane002/repo.svg?style=flat-square
-[license-url]: https://github.com/jkane002/repo/blob/master/LICENSE.txt
+[license-url]: https://github.com/jkane002/repo/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/jkane002
+[linkedin-url]: https://linkedin.com/in/jkaneshiro
 [product-screenshot]: images/screenshot.png
